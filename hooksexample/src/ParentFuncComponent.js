@@ -6,6 +6,7 @@ export default function ParentFuncComponent() {
   const [parentState1, setParentState1] = useState("");
   const [parentState2, setParentState2] = useState("");
 
+  
   useEffect(() => {
     console.log("If you write like this, it is same as componentDidMount");
   }, []);

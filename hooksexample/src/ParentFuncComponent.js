@@ -6,7 +6,6 @@ export default function ParentFuncComponent() {
   const [parentState1, setParentState1] = useState("");
   const [parentState2, setParentState2] = useState("");
 
-  
   useEffect(() => {
     console.log("If you write like this, it is same as componentDidMount");
   }, []);
@@ -38,7 +37,7 @@ export default function ParentFuncComponent() {
       <div style={{ marginTop: "2%", background: "green" }}>
         <ChildComponent1 value={parentState1} />
         <br />
-        <ChildComponent2 value={parentState2} />
+        {parentState2 < 10 && <ChildComponent2 value={parentState2} />}
       </div>
     </div>
   );

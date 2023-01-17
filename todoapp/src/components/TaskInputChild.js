@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './TaskInputChild.css'
 export default function TaskInputChild(props) {
   const [newTask, setNewTask] = useState("");
   function setNewTaskValue(event) {
@@ -10,9 +10,9 @@ export default function TaskInputChild(props) {
   }
   return (
     <div>
-      <h2>Enter the task name:</h2>
-      <input type={"text"} onBlur={setNewTaskValue} />
-      <button onClick={passValueToParent}>Add Task</button>
+      <h2 className="title-style">Enter the task name</h2>
+      <input className="input-button" type={"text"} onBlur={setNewTaskValue} />
+      <button className="add-button" onClick={passValueToParent}>Add Task</button>
     </div>
   );
 }

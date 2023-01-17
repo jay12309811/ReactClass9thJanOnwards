@@ -17,12 +17,19 @@ export default function ParentComponent() {
     newTaskListArray[taskIndex] = updatedTask;
     setTasksListArray(newTaskListArray);
   }
+  function deleteTask(index) {
+    console.log("Received in parent " + index + "th item to delete");
+    const newTaskListArray = [...tasksListArray];
+    newTaskListArray.splice(index, 1); // ref https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    setTasksListArray(newTaskListArray);
+  }
   return (
     <div>
       <TaskInputChild receiveNewTask={receiveNewTask} />
       <TaskListComponent
         tasksListArray={tasksListArray}
         getUpdatedTaskValue={getUpdatedTaskValue}
+        deleteTask={deleteTask}
       />
     </div>
   );

@@ -11,10 +11,19 @@ export default function ParentComponent() {
     // Update already existing tasks with new task value
     setTasksListArray([...tasksListArray, newTask]);
   }
+  function getUpdatedTaskValue(updatedTask, taskIndex) {
+    console.log("Received in ParentComponent", updatedTask, taskIndex);
+    const newTaskListArray = [...tasksListArray];
+    newTaskListArray[taskIndex] = updatedTask;
+    setTasksListArray(newTaskListArray);
+  }
   return (
     <div>
       <TaskInputChild receiveNewTask={receiveNewTask} />
-      <TaskListComponent tasksListArray={tasksListArray} />
+      <TaskListComponent
+        tasksListArray={tasksListArray}
+        getUpdatedTaskValue={getUpdatedTaskValue}
+      />
     </div>
   );
 }

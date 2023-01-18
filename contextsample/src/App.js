@@ -6,15 +6,14 @@ import { CounterContext } from "./context/CounterContext";
 
 function App() {
   const [counter, setCounter] = useState(0);
-
+  const valueForContext = {
+    counterValue: counter,
+    updateFuncCounter: setCounter,
+  };
   return (
     <div className="App">
-      <CounterContext.Provider
-        value={{
-          counterValue: counter,
-          updateFuncCounter: setCounter,
-        }}
-      >
+      {/** Step2: Create a provider and assign value you want to share to inner child components */}
+      <CounterContext.Provider value={valueForContext}>
         <LandingPage />
       </CounterContext.Provider>
     </div>

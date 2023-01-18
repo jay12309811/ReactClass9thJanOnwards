@@ -3,6 +3,7 @@ import { CounterContext } from "../context/CounterContext";
 
 export default function Header() {
   return (
+    // Step 3/ Method 1 - consume value set in provider
     <CounterContext.Consumer>
       {(value) => (
         <div

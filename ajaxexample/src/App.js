@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import reactlogo from "./assets/reactlogo.png";
 
 function App() {
   const [apiResponse, setApiResponse] = useState([]);
@@ -42,6 +43,8 @@ function App() {
       <button onClick={callPOSTApi}>POST Call</button>
       <br />
       <code>{apiResponse + ""}</code>
+
+      <img src={reactlogo} alt="react-logo" height={"150px"} width={"150px"} />
     </div>
   );
 }

@@ -12,9 +12,9 @@ const reduxStore = createStore(
 function App() {
   return (
     <Provider store={reduxStore}>
-      <div className="App">
+      <div className="App" style={{marginTop:'2%'}}>
         <ParentComponent />
-        <ParentFuncComponent/>
+        {/* <ParentFuncComponent/> */}
       </div>
     </Provider>
   );

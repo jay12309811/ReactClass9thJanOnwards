@@ -50,6 +50,22 @@ class ParentComponent extends Component {
             </Space>
           </a>
         </Dropdown>
+        <br />
+        <br />
+        <br />
+        <div>
+          {this.props.selectedCatsList.map((cat) => {
+            return (
+              <img
+                src={cat.url}
+                key={cat.id}
+                width="150px"
+                height={"150px"}
+                alt="cat-image"
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

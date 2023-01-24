@@ -13,8 +13,8 @@ function App() {
   return (
     <Provider store={reduxStore}>
       <div className="App" style={{marginTop:'2%'}}>
-        <ParentComponent />
-        {/* <ParentFuncComponent/> */}
+        {/* <ParentComponent /> */} {/* Class component example for redux use */}
+        <ParentFuncComponent/>
       </div>
     </Provider>
   );
